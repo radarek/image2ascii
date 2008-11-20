@@ -1,5 +1,5 @@
 require "rubygems"
-require "ascii_art"
+require File.dirname(__FILE__) + '/../lib/ascii_art'
 
 if !ARGV.size.between?(1, 2)
   puts "Usage: ruby image2ascii IMAGE_FILE [COLUMNS=80]"

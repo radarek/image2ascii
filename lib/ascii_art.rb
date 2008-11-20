@@ -1,4 +1,4 @@
-require "xterm256color"
+require File.dirname(__FILE__) + "/ascii_art/xterm256color"
 require "RMagick"
 require "open-uri"
 
