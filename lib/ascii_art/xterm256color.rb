@@ -45,15 +45,7 @@ class AsciiArt
 
     # fill the colortable for use with rgb2xterm
     def self.make_table
-      @colortable ||=
-        begin
-          colortable = []
-          0.upto(253) do |color|
-            rgb = xterm2rgb(color)
-            colortable << rgb
-          end
-          colortable
-        end
+      @colortable ||= (0..253).map {|color| xterm2rgb(color) }
     end
 
     # selects the nearest xterm color for a given [r, g, b] color table
