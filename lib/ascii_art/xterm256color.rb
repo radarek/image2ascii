@@ -54,17 +54,17 @@ class AsciiArt
       return @rgb2xterm_cache[rgb] ||=
         begin
           self.make_table
-          smallest_distance = 1_000_000_000_000
-          best_match = 0
+          smallest_distance = self.euclidean_distance(@colortable[0], rgb)
+          nearest_color = 0
 
           0.upto(253) do |color|
-            d = self.euclidean_distance(@colortable[color], rgb)
-            if d < smallest_distance
-              smallest_distance = d
-              best_match = color
+            distance = self.euclidean_distance(@colortable[color], rgb)
+            if distance < smallest_distance
+              smallest_distance = distance
+              nearest_color = color
             end
           end
-          best_match
+          nearest_color
         end
     end
 
