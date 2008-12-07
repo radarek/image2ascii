@@ -1,0 +1,6 @@
+README.txt
+bin/image2ascii
+Manifest
+Rakefile
+lib/ascii_art/xterm256color.rb
+lib/ascii_art.rb
